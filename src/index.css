@@ -6,76 +6,67 @@
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
-
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
-
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-
     --primary: 222.2 47.4% 11.2%;
     --primary-foreground: 210 40% 98%;
-
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
-
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-
     --accent: 210 40% 96.1%;
     --accent-foreground: 222.2 47.4% 11.2%;
-
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
-
     --radius: 0.5rem;
-
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* V2EX specific colors */
+    --v2ex-bg: #f5f5f5;
+    --v2ex-box-bg: #ffffff;
+    --v2ex-box-border: #e2e2e2;
+    --v2ex-text: #333333;
+    --v2ex-text-fade: #999999;
+    --v2ex-link: #778087;
+    --v2ex-link-hover: #4d5256;
+    --v2ex-node: #999999;
+    --v2ex-count: #ffffff;
+    --v2ex-count-bg: #778087;
+    --v2ex-tab-current: #ffffff;
+    --v2ex-tab-current-bg: #778087;
+    --v2ex-button: #ffffff;
+    --v2ex-button-bg: #778087;
   }
 
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
-
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
-
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
-
     --primary: 210 40% 98%;
     --primary-foreground: 222.2 47.4% 11.2%;
-
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
-
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
-
     --accent: 217.2 32.6% 17.5%;
     --accent-foreground: 210 40% 98%;
-
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
@@ -96,6 +87,126 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-[#f5f5f5] text-[#333333] font-sans;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
   }
+}
+
+/* V2EX specific styles */
+.box {
+  @apply bg-white border border-[#e2e2e2] rounded-md shadow-sm;
+}
+
+.cell {
+  @apply px-3 py-2 border-b border-[#f0f0f0] last:border-b-0;
+}
+
+.inner {
+  @apply px-3 py-2 bg-[#f9f9f9] text-[#999999] text-xs;
+}
+
+.fade {
+  @apply text-[#999999];
+}
+
+.gray {
+  @apply text-[#999999];
+}
+
+.sep5 {
+  @apply h-[5px];
+}
+
+.sep10 {
+  @apply h-[10px];
+}
+
+.sep20 {
+  @apply h-[20px];
+}
+
+.avatar {
+  @apply rounded-md;
+}
+
+.node {
+  @apply text-[#999999] text-xs bg-[#f5f5f5] px-1 py-0.5 rounded no-underline hover:bg-[#e2e2e2];
+}
+
+.count_livid {
+  @apply bg-[#778087] text-white text-xs px-1.5 py-0.5 rounded no-underline hover:bg-[#4d5256];
+}
+
+.tab {
+  @apply text-[#778087] px-3 py-1 text-sm no-underline hover:bg-[#f0f0f0] rounded;
+}
+
+.tab_current {
+  @apply bg-[#778087] text-white px-3 py-1 text-sm no-underline rounded;
+}
+
+.item_node {
+  @apply text-[#778087] text-xs bg-[#f5f5f5] px-2 py-1 rounded mr-2 mb-1 inline-block no-underline hover:bg-[#e2e2e2];
+}
+
+.super.normal.button {
+  @apply bg-[#778087] text-white px-4 py-2 rounded text-sm no-underline hover:bg-[#4d5256];
+}
+
+.chevron {
+  @apply text-[#999999];
+}
+
+.f12 {
+  @apply text-xs;
+}
+
+.f16 {
+  @apply text-base;
+}
+
+.fr {
+  @apply float-right;
+}
+
+.flex-one-row {
+  @apply flex items-center;
+}
+
+#Logo {
+  @apply w-[94px] h-[30px] bg-[url('https://v2ex.com/static/img/v2ex@2x.png')] bg-no-repeat bg-contain;
+}
+
+.topic-link {
+  @apply text-[#333333] no-underline hover:underline;
+}
+
+.item_hot_topic_title a {
+  @apply text-[#333333] no-underline hover:underline;
+}
+
+.votes {
+  @apply inline-flex items-center text-[#999999] text-xs mr-2;
+}
+
+.item_title {
+  @apply text-base font-normal;
+}
+
+.topic_info {
+  @apply text-xs text-[#999999];
+}
+
+.item {
+  @apply hover:bg-[#f9f9f9];
+}
+
+a {
+  @apply text-[#778087] no-underline hover:underline;
+}
+
+strong a {
+  @apply text-[#333333];
 }
